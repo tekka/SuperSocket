@@ -74,6 +74,12 @@ namespace SuperSocket.WebSocket.Protocol
 
             responseBuilder.AppendWithCrCf(WebSocketConstant.ResponseHeadLine10);
             responseBuilder.AppendWithCrCf(WebSocketConstant.ResponseUpgradeLine);
+
+            foreach (var additional_header in WebSocketServer.additional_headers)
+            {
+                responseBuilder.AppendWithCrCf(additional_header);
+            }
+
             responseBuilder.AppendWithCrCf(WebSocketConstant.ResponseConnectionLine);
             responseBuilder.AppendFormatWithCrCf(WebSocketConstant.ResponseAcceptLine, secKeyAccept);
 

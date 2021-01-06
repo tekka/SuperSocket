@@ -45,6 +45,12 @@ namespace SuperSocket.WebSocket.Protocol
 
             responseBuilder.AppendWithCrCf(WebSocketConstant.ResponseHeadLine00);
             responseBuilder.AppendWithCrCf(WebSocketConstant.ResponseUpgradeLine);
+
+            foreach (var additional_header in WebSocketServer.additional_headers)
+            {
+                responseBuilder.AppendWithCrCf(additional_header);
+            }
+
             responseBuilder.AppendWithCrCf(WebSocketConstant.ResponseConnectionLine);
 
             if (!string.IsNullOrEmpty(session.Origin))

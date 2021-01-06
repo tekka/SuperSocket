@@ -50,6 +50,8 @@ namespace SuperSocket.WebSocket
     /// </summary>
     public class WebSocketServer : WebSocketServer<WebSocketSession>
     {
+        public static List<string> additional_headers = new List<string>();
+
         /// <summary>
         /// Initializes a new instance of the <see cref="WebSocketServer"/> class.
         /// </summary>
