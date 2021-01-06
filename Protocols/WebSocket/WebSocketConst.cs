@@ -27,6 +27,8 @@ namespace SuperSocket.WebSocket
         public const string ResponseLocationLine = "Sec-WebSocket-Location: {0}://{1}{2}";
         public const string ResponseProtocolLine = SecWebSocketProtocol + ": {0}";
         public const string ResponseAcceptLine = "Sec-WebSocket-Accept: {0}";
+        public const string ResponseCORS = "Access-Control-Allow-Origin: {0}";
+
         public const byte StartByte = 0x00;
         public const byte EndByte = 0xFF;
         public static byte[] ClosingHandshake = new byte[] { 0xFF, 0x00 };

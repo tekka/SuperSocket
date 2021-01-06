@@ -50,7 +50,8 @@ namespace SuperSocket.WebSocket
     /// </summary>
     public class WebSocketServer : WebSocketServer<WebSocketSession>
     {
-        public static List<string> additional_headers = new List<string>();
+        public static List<string> additional_headers { get; set; } = new List<string>();
+        public static bool allow_cors_to_all_domain { get; set; } = false;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WebSocketServer"/> class.

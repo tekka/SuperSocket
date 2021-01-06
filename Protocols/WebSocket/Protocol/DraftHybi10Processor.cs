@@ -80,6 +80,11 @@ namespace SuperSocket.WebSocket.Protocol
                 responseBuilder.AppendWithCrCf(additional_header);
             }
 
+            if (WebSocketServer.allow_cors_to_all_domain)
+            {
+                responseBuilder.AppendFormatWithCrCf(WebSocketConstant.ResponseCORS, session.Origin);
+            }
+
             responseBuilder.AppendWithCrCf(WebSocketConstant.ResponseConnectionLine);
             responseBuilder.AppendFormatWithCrCf(WebSocketConstant.ResponseAcceptLine, secKeyAccept);
 
